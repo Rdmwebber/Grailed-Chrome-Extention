@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Grailed New Post",
+  "version": "1.00",
+  "icons": {
+    "16": "Icons/gmHands16.png",
+    "48": "Icons/gmHands48.png",
+    "128": "Icons/gmHands128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "Icons/gmHands16.png",
+      "48": "Icons/gmHands48.png",
+      "128": "Icons/gmHands128.png"
+    },
+    "default_title": "GRAIL MARY!"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.grailed.com/sell/new"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "contentSettings",
+    "debugger",
+    "nativeMessaging",
+    "tabCapture",
+    "tabs",
+    "activeTab",
+    "background",
+    "scripting"
+  ]
+}
